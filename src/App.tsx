@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AmongTheStars from "./pages/projects/AmongTheStars";
+import OctoPaint from "./pages/projects/OctoPaint";
+import Noctopus from "./pages/projects/Noctopus";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/projects/among-the-stars" element={<AmongTheStars />} />
+          <Route path="/projects/octopaint" element={<OctoPaint />} />
+          <Route path="/projects/noctopus" element={<Noctopus />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
