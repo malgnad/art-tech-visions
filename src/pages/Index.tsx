@@ -224,27 +224,32 @@ const Index = () => {
                   <div className="bg-nebula rounded-2xl p-8 inline-block">
                     <h4 className="text-xl font-bold mb-4">Connect With Me</h4>
                     <div className="flex justify-center md:justify-end space-x-4">
-                      <Button 
-                        variant="outline"
-                        size="icon"
-                        className="bg-card/30 border-primary/30 hover:bg-primary hover:text-primary-foreground aurora-glow"
+                      <a 
+                        href="https://github.com/yourusername" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block"
                       >
-                        <Github className="w-5 h-5" />
-                      </Button>
-                      <Button 
-                        variant="outline"
-                        size="icon"
-                        className="bg-card/30 border-primary/30 hover:bg-primary hover:text-primary-foreground aurora-glow"
+                        <Button 
+                          variant="outline"
+                          size="icon"
+                          className="bg-card/30 border-primary/30 hover:bg-primary hover:text-primary-foreground aurora-glow"
+                        >
+                          <Github className="w-5 h-5" />
+                        </Button>
+                      </a>
+                      <a 
+                        href="mailto:gn24102006@gmail.com"
+                        className="inline-block"
                       >
-                        <Linkedin className="w-5 h-5" />
-                      </Button>
-                      <Button 
-                        variant="outline"
-                        size="icon"
-                        className="bg-card/30 border-primary/30 hover:bg-primary hover:text-primary-foreground aurora-glow"
-                      >
-                        <Mail className="w-5 h-5" />
-                      </Button>
+                        <Button 
+                          variant="outline"
+                          size="icon"
+                          className="bg-card/30 border-primary/30 hover:bg-primary hover:text-primary-foreground aurora-glow"
+                        >
+                          <Mail className="w-5 h-5" />
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
