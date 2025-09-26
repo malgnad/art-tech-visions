@@ -220,10 +220,10 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="text-center md:text-right">
+                <div className="text-center">
                   <div className="bg-nebula rounded-2xl p-8 inline-block">
                     <h4 className="text-xl font-bold mb-4">Connect With Me</h4>
-                    <div className="flex justify-center md:justify-end space-x-4">
+                    <div className="flex justify-center space-x-4">
                       <a 
                         href="https://github.com/yourusername" 
                         target="_blank" 
