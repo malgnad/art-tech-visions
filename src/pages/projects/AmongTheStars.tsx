@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
@@ -7,6 +8,10 @@ import { Link } from 'react-router-dom';
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 
 const AmongTheStars = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navigation />
