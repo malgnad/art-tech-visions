@@ -58,19 +58,6 @@ const Noctopus = () => {
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex gap-4">
-                  <Button className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition">
-                    <Moon className="w-4 h-4 mr-2" />
-                    Visit Website
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="bg-card/30 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground aurora-glow"
-                  >
-                    View Code
-                  </Button>
-                </div>
               </div>
               
               <div className="animate-slide-up">
