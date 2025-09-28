@@ -8,6 +8,9 @@ import { Mail, Phone, Github, Linkedin, Download, Star, Code, Palette, Image, Ca
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 import octopaintImage from '@/assets/octopaint.png';
 import noctopusImage from '@/assets/noctopus.png';
+import profileMainImage from '@/assets/profile-main.png';
+import uehLogoImage from '@/assets/ueh-logo.png';
+import uehCampusImage from '@/assets/ueh-campus.png';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,6 +63,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-cosmic opacity-50" />
         <div className="container mx-auto px-6 py-20 text-center relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+            <div className="mb-8 flex justify-center">
+              <div className="relative">
+                <img 
+                  src={profileMainImage} 
+                  alt="Nguyen Lam Giang - Profile"
+                  className="w-48 h-64 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-2 ring-primary/30 animate-pulse" />
+              </div>
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
               Nguyen Lam Giang
             </h1>
@@ -143,11 +156,27 @@ const Index = () => {
               
               <Card className="p-6 bg-card/50 border-border/50 nebula-glow">
                 <h3 className="text-xl font-bold mb-4 text-primary">Academic Excellence</h3>
-                <div className="flex items-center space-x-3">
-                  <Star className="w-6 h-6 text-accent" />
-                  <div>
-                    <p className="font-medium">University of Economics Ho Chi Minh City</p>
-                    <p className="text-sm text-muted-foreground">ArtTech Major • Excellent Academic Standing</p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Star className="w-6 h-6 text-accent" />
+                    <div>
+                      <p className="font-medium">University of Economics Ho Chi Minh City</p>
+                      <p className="text-sm text-muted-foreground">ArtTech Major • Excellent Academic Standing</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4 pt-2">
+                    <img 
+                      src={uehLogoImage} 
+                      alt="UEH University Logo"
+                      className="w-16 h-8 object-contain"
+                    />
+                    <div className="flex-1">
+                      <img 
+                        src={uehCampusImage} 
+                        alt="UEH University Campus"
+                        className="w-full h-20 object-cover rounded-lg shadow-md"
+                      />
+                    </div>
                   </div>
                 </div>
               </Card>
