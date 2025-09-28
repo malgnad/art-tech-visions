@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
-import { Mail, Phone, Github, Linkedin, Download, Star, Code, Palette } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Download, Star, Code, Palette, Image, Camera, Video, Film } from 'lucide-react';
 
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 import octopaintImage from '@/assets/octopaint.png';
@@ -44,7 +44,11 @@ const Index = () => {
     { icon: Code, name: "TouchDesigner", level: "Beginner" },
     { icon: Palette, name: "Blender", level: "Beginner" },
     { icon: Star, name: "Creative Coding", level: "Intermediate" },
-    { icon: Code, name: "Web Development", level: "Beginner" }
+    { icon: Code, name: "Web Development", level: "Beginner" },
+    { icon: Image, name: "Adobe Illustrator", level: "Intermediate" },
+    { icon: Camera, name: "Photoshop", level: "Intermediate" },
+    { icon: Video, name: "After Effects", level: "Intermediate" },
+    { icon: Film, name: "Premiere Pro", level: "Intermediate" }
   ];
 
   return (
