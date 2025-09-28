@@ -19,6 +19,13 @@ const Index = () => {
     setIsVisible(true);
   }, []);
 
+  type Skill = {
+    icon?: any;
+    iconImg?: string; // path from public/
+    name: string;
+    level: string;
+  };
+
   const projects = [
     {
       title: "Among the Stars",
@@ -43,15 +50,16 @@ const Index = () => {
     }
   ];
 
-  const skills = [
+  const skills: Skill[] = [
     { icon: Code, name: "TouchDesigner", level: "Beginner" },
     { icon: Palette, name: "Blender", level: "Beginner" },
     { icon: Star, name: "Creative Coding", level: "Intermediate" },
     { icon: Code, name: "Web Development", level: "Beginner" },
-    { icon: Image, name: "Adobe Illustrator", level: "Intermediate" },
-    { icon: Camera, name: "Photoshop", level: "Intermediate" },
-    { icon: Video, name: "After Effects", level: "Intermediate" },
-    { icon: Film, name: "Premiere Pro", level: "Intermediate" }
+    // Use uploaded PNG logos from public/ for Adobe tools
+    { iconImg: "/illustrator.png", name: "Adobe Illustrator", level: "Intermediate" },
+    { iconImg: "/photoshop.png", name: "Photoshop", level: "Intermediate" },
+    { iconImg: "/after-effects.png", name: "After Effects", level: "Intermediate" },
+    { iconImg: "/premiere-pro.png", name: "Premiere Pro", level: "Intermediate" }
   ];
 
   return (
@@ -59,36 +67,36 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-start relative overflow-hidden">
         <div className="absolute inset-0 bg-cosmic opacity-50" />
-        <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="container px-6 py-20 relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+            <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 sm:gap-6 lg:gap-6 xl:gap-8 items-stretch min-h-[60vh]">
               {/* Profile Image - Left Side */}
-              <div className="flex items-center justify-center lg:justify-end">
+              <div className="h-auto lg:h-96 flex items-center justify-start lg:justify-start lg:pr-2 mb-2 sm:mb-3 lg:mb-0">
                 <div className="relative">
                   <img 
                     src={profileMainImage} 
                     alt="Nguyen Lam Giang - Profile"
-                    className="w-64 h-80 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
+                    className="w-64 h-80 lg:w-72 lg:h-96 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-2 ring-primary/30 animate-pulse" />
                 </div>
               </div>
               
               {/* Text Content - Right Side */}
-              <div className="flex flex-col justify-center text-center lg:text-left">
+              <div className="h-auto lg:h-96 flex flex-col justify-center items-start text-left ml-0 mt-2 sm:mt-3 lg:mt-0 lg:pl-2 xl:pl-3 2xl:pl-4">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
                   Nguyen Lam Giang
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:mx-0 mx-auto">
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-0">
                   ArtTech Student • Creative Technologist • Digital Media Explorer
                 </p>
-                <p className="text-lg text-foreground/80 mb-12 max-w-3xl lg:mx-0 mx-auto leading-relaxed">
+                <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-0 leading-relaxed">
                   Exploring the intersection of art and technology through interactive design, 
                   creative coding, and digital media at the University of Economics Ho Chi Minh City.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
                   <Button 
                     size="lg"
                     className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
@@ -149,9 +157,13 @@ const Index = () => {
               <Card className="p-8 bg-card/50 border-border/50 nebula-glow mb-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Skills & Tools</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {skills.map((skill, index) => (
+                  {skills.map((skill) => (
                     <div key={skill.name} className="flex items-center space-x-3 p-3 rounded-lg bg-secondary/20">
-                      <skill.icon className="w-5 h-5 text-accent" />
+                      {skill.iconImg ? (
+                        <img src={skill.iconImg} alt={skill.name} className="w-5 h-5 object-contain" />
+                      ) : (
+                        skill.icon && <skill.icon className="w-5 h-5 text-accent" />
+                      )}
                       <div>
                         <p className="font-medium">{skill.name}</p>
                         <p className="text-sm text-muted-foreground">{skill.level}</p>
@@ -170,20 +182,18 @@ const Index = () => {
                       <p className="font-medium">University of Economics Ho Chi Minh City</p>
                       <p className="text-sm text-muted-foreground">ArtTech Major • Excellent Academic Standing</p>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-4 pt-2">
                     <img 
                       src={uehLogoImage} 
                       alt="UEH University Logo"
-                      className="w-16 h-8 object-contain"
+                      className="w-16 h-8 object-contain hidden sm:block ml-2"
                     />
-                    <div className="flex-1">
-                      <img 
-                        src={uehCampusImage} 
-                        alt="UEH University Campus"
-                        className="w-full h-20 object-contain rounded-lg shadow-md"
-                      />
-                    </div>
+                  </div>
+                  <div className="pt-2">
+                    <img 
+                      src={uehCampusImage} 
+                      alt="UEH University Campus"
+                      className="w-full h-28 md:h-32 object-contain"
+                    />
                   </div>
                 </div>
               </Card>
