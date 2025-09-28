@@ -61,44 +61,51 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-cosmic opacity-50" />
-        <div className="container mx-auto px-6 py-20 text-center relative z-10">
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <img 
-                  src={profileMainImage} 
-                  alt="Nguyen Lam Giang - Profile"
-                  className="w-48 h-64 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
-                />
-                <div className="absolute inset-0 rounded-2xl ring-2 ring-primary/30 animate-pulse" />
+            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+              {/* Profile Image - Left Side */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  <img 
+                    src={profileMainImage} 
+                    alt="Nguyen Lam Giang - Profile"
+                    className="w-64 h-80 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-2 ring-primary/30 animate-pulse" />
+                </div>
               </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
-              Nguyen Lam Giang
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              ArtTech Student • Creative Technologist • Digital Media Explorer
-            </p>
-            <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Exploring the intersection of art and technology through interactive design, 
-              creative coding, and digital media at the University of Economics Ho Chi Minh City.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View My Work
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="bg-card/30 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground aurora-glow"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Get in Touch
-              </Button>
+              
+              {/* Text Content - Right Side */}
+              <div className="text-center lg:text-left">
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
+                  Nguyen Lam Giang
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:mx-0 mx-auto">
+                  ArtTech Student • Creative Technologist • Digital Media Explorer
+                </p>
+                <p className="text-lg text-foreground/80 mb-12 max-w-3xl lg:mx-0 mx-auto leading-relaxed">
+                  Exploring the intersection of art and technology through interactive design, 
+                  creative coding, and digital media at the University of Economics Ho Chi Minh City.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button 
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
+                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    View My Work
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="bg-card/30 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground aurora-glow"
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Get in Touch
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -174,7 +181,7 @@ const Index = () => {
                       <img 
                         src={uehCampusImage} 
                         alt="UEH University Campus"
-                        className="w-full h-20 object-cover rounded-lg shadow-md"
+                        className="w-full h-20 object-contain rounded-lg shadow-md"
                       />
                     </div>
                   </div>
