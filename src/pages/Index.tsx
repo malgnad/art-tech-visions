@@ -8,7 +8,6 @@ import { Mail, Phone, Github, Linkedin, Download, Star, Code, Palette } from 'lu
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 import octopaintImage from '@/assets/octopaint.png';
 import noctopusImage from '@/assets/noctopus.png';
-import profileHeroImage from '@/assets/profile-hero.png';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,18 +56,6 @@ const Index = () => {
         <div className="absolute inset-0 bg-cosmic opacity-50" />
         <div className="container mx-auto px-6 py-20 text-center relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            {/* Profile Image */}
-            <div className="mb-12">
-              <div className="relative inline-block">
-                <img 
-                  src={profileHeroImage} 
-                  alt="Nguyen Lam Giang"
-                  className="w-48 h-64 object-cover rounded-2xl border-2 border-primary/30 nebula-glow cosmic-transition hover:scale-105 mx-auto"
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
-              </div>
-            </div>
-            
             <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
               Nguyen Lam Giang
             </h1>
