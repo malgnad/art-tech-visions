@@ -65,7 +65,7 @@ const Index = () => {
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
               {/* Profile Image - Left Side */}
-              <div className="flex justify-center lg:justify-end">
+              <div className="flex items-center justify-center lg:justify-end">
                 <div className="relative">
                   <img 
                     src={profileMainImage} 
@@ -77,7 +77,7 @@ const Index = () => {
               </div>
               
               {/* Text Content - Right Side */}
-              <div className="text-center lg:text-left">
+              <div className="flex flex-col justify-center text-center lg:text-left">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
                   Nguyen Lam Giang
                 </h1>
