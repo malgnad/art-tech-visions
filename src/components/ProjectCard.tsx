@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, slug, tags }: ProjectCardProps) => {
   return (
-    <Card className="group bg-card/50 border-border/50 nebula-glow hover:shadow-glow cosmic-transition overflow-hidden">
+    <Card className="group bg-card/50 border-border/50 nebula-glow hover:shadow-glow cosmic-transition overflow-hidden h-full flex flex-col">
       <div className="relative aspect-video overflow-hidden">
         <img 
           src={image} 
@@ -26,8 +26,8 @@ const ProjectCard = ({ title, description, image, slug, tags }: ProjectCardProps
         </div>
       </div>
       
-      <div className="p-6">
-        <p className="text-muted-foreground mb-4 leading-relaxed">
+      <div className="p-6 flex flex-col flex-1">
+        <p className="text-muted-foreground mb-4 leading-relaxed flex-1">
           {description}
         </p>
         
@@ -42,7 +42,7 @@ const ProjectCard = ({ title, description, image, slug, tags }: ProjectCardProps
           ))}
         </div>
         
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <Button 
             asChild
             variant="outline"
