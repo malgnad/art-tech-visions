@@ -72,7 +72,7 @@ const InteractivePlanet = ({
     <div className={`relative ${className}`}>
       <div
         ref={planetRef}
-        className={`rounded-full bg-gradient-to-br ${color} cursor-grab active:cursor-grabbing shadow-2xl`}
+        className={`rounded-full bg-gradient-to-br ${color} cursor-grab active:cursor-grabbing shadow-2xl transition-all duration-300`}
         style={{
           width: size,
           height: size,

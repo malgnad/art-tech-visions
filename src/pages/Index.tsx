@@ -44,14 +44,14 @@ const Index = () => {
   ];
 
   const skills = [
-    { icon: Code, name: "TouchDesigner", level: "Beginner" },
-    { icon: Palette, name: "Blender", level: "Beginner" },
-    { icon: Star, name: "Creative Coding", level: "Intermediate" },
-    { icon: Code, name: "Web Development", level: "Beginner" },
-    { icon: Image, name: "Adobe Illustrator", level: "Intermediate" },
-    { icon: Camera, name: "Photoshop", level: "Intermediate" },
-    { icon: Video, name: "After Effects", level: "Intermediate" },
-    { icon: Film, name: "Premiere Pro", level: "Intermediate" }
+    { icon: Code, name: "TouchDesigner", level: "Beginner", iconType: "lucide" },
+    { icon: Palette, name: "Blender", level: "Beginner", iconType: "lucide" },
+    { icon: Star, name: "Creative Coding", level: "Intermediate", iconType: "lucide" },
+    { icon: Code, name: "Web Development", level: "Beginner", iconType: "lucide" },
+    { name: "Adobe Illustrator", level: "Intermediate", iconType: "image", iconPath: "/adobe-illustrator.png" },
+    { name: "Photoshop", level: "Intermediate", iconType: "image", iconPath: "/adobe-photoshop.png" },
+    { name: "After Effects", level: "Intermediate", iconType: "image", iconPath: "/adobe-after-effects.png" },
+    { name: "Premiere Pro", level: "Intermediate", iconType: "image", iconPath: "/adobe-premiere-pro.png" }
   ];
 
   return (
@@ -75,9 +75,9 @@ const Index = () => {
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center min-h-[60vh]">
+            <div className="grid lg:grid-cols-2 gap-16 items-center justify-items-center max-w-7xl mx-auto">
               {/* Profile Image - Left Side */}
-              <div className="flex items-center justify-center lg:justify-end">
+              <div className="flex items-center justify-center lg:justify-center">
                 <div className="relative">
                   <img 
                     src={profileMainImage} 
@@ -129,8 +129,19 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 relative">
-        <div className="container mx-auto px-6">
+      <section id="about" className="py-20 relative overflow-hidden">
+        {/* Decorative Planets Around About Section */}
+        <div className="absolute top-10 left-10 opacity-60 animate-float" style={{ animationDelay: '1s' }}>
+          <InteractivePlanet size={100} color="from-violet-400 to-purple-500" hasRing={true} className="hover:scale-110 transition-transform duration-300" />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-50 animate-float" style={{ animationDelay: '3s' }}>
+          <InteractivePlanet size={70} color="from-pink-400 to-fuchsia-500" hasRing={false} className="hover:scale-110 hover:brightness-125 transition-all duration-300" />
+        </div>
+        <div className="absolute top-1/3 right-1/4 opacity-40 animate-float" style={{ animationDelay: '5s' }}>
+          <InteractivePlanet size={50} color="from-purple-400 to-violet-500" hasRing={false} className="hover:brightness-150 transition-all duration-300" />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 cosmic-glow">About Me</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full aurora-glow" />
@@ -162,8 +173,16 @@ const Index = () => {
                 <h3 className="text-2xl font-bold mb-6 text-primary">Skills & Tools</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {skills.map((skill, index) => (
-                    <div key={skill.name} className="flex items-center space-x-3 p-3 rounded-lg bg-secondary/20">
-                      <skill.icon className="w-5 h-5 text-accent" />
+                    <div key={skill.name} className="flex items-center space-x-3 p-3 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors">
+                      {skill.iconType === "lucide" && skill.icon ? (
+                        <skill.icon className="w-5 h-5 text-accent" />
+                      ) : (
+                        <img 
+                          src={skill.iconPath} 
+                          alt={`${skill.name} icon`} 
+                          className="w-5 h-5 object-contain"
+                        />
+                      )}
                       <div>
                         <p className="font-medium">{skill.name}</p>
                         <p className="text-sm text-muted-foreground">{skill.level}</p>
