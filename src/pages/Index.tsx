@@ -3,13 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
-import { Mail, Phone, Github, Linkedin, Download, Star, Code, Palette, Image, Camera, Video, Film } from 'lucide-react';
+import InteractivePlanet from '@/components/InteractivePlanet';
+import { Mail, Phone, Github, Star, Code, Palette, Image, Camera, Video, Film } from 'lucide-react';
 
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 import octopaintImage from '@/assets/octopaint.png';
 import noctopusImage from '@/assets/noctopus.png';
 import profileMainImage from '@/assets/profile-main.png';
-import uehLogoImage from '@/assets/ueh-logo.png';
 import uehCampusImage from '@/assets/ueh-campus.png';
 
 const Index = () => {
@@ -61,34 +61,46 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-cosmic opacity-50" />
+        
+        {/* Decorative Planets */}
+        <div className="absolute top-20 right-10 animate-float" style={{ animationDelay: '0s' }}>
+          <InteractivePlanet size={180} color="from-pink-500 via-purple-500 to-violet-600" hasRing={true} />
+        </div>
+        <div className="absolute bottom-32 left-20 opacity-70 animate-float" style={{ animationDelay: '2s' }}>
+          <InteractivePlanet size={80} color="from-fuchsia-400 to-pink-500" hasRing={false} />
+        </div>
+        <div className="absolute top-1/2 right-1/4 opacity-50 animate-float" style={{ animationDelay: '4s' }}>
+          <InteractivePlanet size={60} color="from-violet-400 to-purple-500" hasRing={false} />
+        </div>
+
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+            <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 items-center min-h-[60vh]">
               {/* Profile Image - Left Side */}
               <div className="flex items-center justify-center lg:justify-end">
                 <div className="relative">
                   <img 
                     src={profileMainImage} 
                     alt="Nguyen Lam Giang - Profile"
-                    className="w-64 h-80 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
+                    className="w-72 h-96 object-cover rounded-2xl cosmic-glow nebula-glow shadow-2xl"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-2 ring-primary/30 animate-pulse" />
                 </div>
               </div>
               
               {/* Text Content - Right Side */}
-              <div className="flex flex-col justify-center text-center lg:text-left">
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 cosmic-glow">
+              <div className="flex flex-col justify-center text-center lg:text-left space-y-6">
+                <h1 className="text-5xl md:text-7xl font-bold cosmic-glow">
                   Nguyen Lam Giang
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:mx-0 mx-auto">
+                <p className="text-xl md:text-2xl text-muted-foreground">
                   ArtTech Student • Creative Technologist • Digital Media Explorer
                 </p>
-                <p className="text-lg text-foreground/80 mb-12 max-w-3xl lg:mx-0 mx-auto leading-relaxed">
+                <p className="text-lg text-foreground/80 leading-relaxed">
                   Exploring the intersection of art and technology through interactive design, 
                   creative coding, and digital media at the University of Economics Ho Chi Minh City.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                   <Button 
                     size="lg"
                     className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
@@ -109,7 +121,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
           </div>
@@ -171,19 +183,12 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground">ArtTech Major • Excellent Academic Standing</p>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4 pt-2">
+                  <div className="pt-2">
                     <img 
-                      src={uehLogoImage} 
-                      alt="UEH University Logo"
-                      className="w-16 h-8 object-contain"
+                      src={uehCampusImage} 
+                      alt="UEH University Campus"
+                      className="w-full h-48 object-cover rounded-lg shadow-md ring-2 ring-primary/20"
                     />
-                    <div className="flex-1">
-                      <img 
-                        src={uehCampusImage} 
-                        alt="UEH University Campus"
-                        className="w-full h-20 object-contain rounded-lg shadow-md"
-                      />
-                    </div>
                   </div>
                 </div>
               </Card>
