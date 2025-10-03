@@ -6,7 +6,6 @@ import { ArrowLeft, Star, Zap, Users, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import amongTheStarsImage from '@/assets/among-the-stars.png';
-import profileImage from '@/assets/profile-image.png';
 
 const AmongTheStars = () => {
   useEffect(() => {
@@ -18,22 +17,6 @@ const AmongTheStars = () => {
       <Navigation />
       
       <div className="pt-20">
-        {/* Profile Image Section */}
-        <section className="py-12">
-          <div className="container mx-auto px-6">
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <img 
-                  src={profileImage} 
-                  alt="Profile"
-                  className="w-48 h-64 object-cover rounded-2xl border-2 border-primary/30 nebula-glow cosmic-transition hover:scale-105"
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-cosmic opacity-30" />
