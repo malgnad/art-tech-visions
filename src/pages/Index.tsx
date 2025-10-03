@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
 import InteractivePlanet from '@/components/InteractivePlanet';
+import TwinklingStars from '@/components/TwinklingStars';
 import { Mail, Phone, Github, Star, Code, Palette, Image, Camera, Video, Film } from 'lucide-react';
 
 import amongTheStarsImage from '@/assets/among-the-stars.png';
@@ -55,7 +56,10 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Floating Stars Background - Entire Website */}
+      <TwinklingStars count={80} className="fixed inset-0 z-0 opacity-30" />
+      
       <Navigation />
       
       {/* Hero Section */}
@@ -63,13 +67,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-cosmic opacity-50" />
         
         {/* Decorative Planets */}
-        <div className="absolute top-20 right-10 animate-float" style={{ animationDelay: '0s' }}>
+        <div className="absolute top-20 right-20 animate-float z-10" style={{ animationDelay: '0s' }}>
           <InteractivePlanet size={180} color="from-pink-500 via-purple-500 to-violet-600" hasRing={true} />
         </div>
-        <div className="absolute bottom-32 left-20 opacity-70 animate-float" style={{ animationDelay: '2s' }}>
+        <div className="absolute bottom-40 left-12 opacity-70 animate-float z-10" style={{ animationDelay: '2s' }}>
           <InteractivePlanet size={80} color="from-fuchsia-400 to-pink-500" hasRing={false} />
         </div>
-        <div className="absolute top-1/2 right-1/4 opacity-50 animate-float" style={{ animationDelay: '4s' }}>
+        <div className="absolute top-1/3 right-1/3 opacity-50 animate-float z-10" style={{ animationDelay: '4s' }}>
           <InteractivePlanet size={60} color="from-violet-400 to-purple-500" hasRing={false} />
         </div>
 
@@ -130,20 +134,23 @@ const Index = () => {
 
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
-        {/* Decorative Planets Around About Section */}
-        <div className="absolute top-10 left-10 opacity-60 animate-float" style={{ animationDelay: '1s' }}>
+        {/* Twinkling Stars Around Planets */}
+        <TwinklingStars count={40} className="absolute inset-0 z-0" />
+        
+        {/* Decorative Planets Around About Section - Better Aligned */}
+        <div className="absolute top-16 left-16 opacity-60 animate-float z-10" style={{ animationDelay: '1s' }}>
           <InteractivePlanet size={100} color="from-violet-400 to-purple-500" hasRing={true} className="hover:scale-110 hover:drop-shadow-[0_0_40px_rgba(167,139,250,0.8)] transition-all duration-300" />
         </div>
-        <div className="absolute top-40 left-32 opacity-70 animate-float" style={{ animationDelay: '2.5s' }}>
+        <div className="absolute top-48 left-48 opacity-70 animate-float z-10" style={{ animationDelay: '2.5s' }}>
           <InteractivePlanet size={60} color="from-fuchsia-400 to-pink-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_30px_rgba(236,72,153,0.9)] transition-all duration-300" />
         </div>
-        <div className="absolute top-2/3 left-20 opacity-55 animate-float" style={{ animationDelay: '4s' }}>
+        <div className="absolute bottom-32 left-24 opacity-55 animate-float z-10" style={{ animationDelay: '4s' }}>
           <InteractivePlanet size={80} color="from-pink-500 to-purple-600" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_35px_rgba(219,39,119,0.8)] transition-all duration-300" />
         </div>
-        <div className="absolute bottom-20 right-10 opacity-50 animate-float" style={{ animationDelay: '3s' }}>
+        <div className="absolute bottom-24 right-16 opacity-50 animate-float z-10" style={{ animationDelay: '3s' }}>
           <InteractivePlanet size={70} color="from-pink-400 to-fuchsia-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_35px_rgba(236,72,153,0.8)] transition-all duration-300" />
         </div>
-        <div className="absolute top-1/3 right-1/4 opacity-40 animate-float" style={{ animationDelay: '5s' }}>
+        <div className="absolute top-1/3 right-32 opacity-40 animate-float z-10" style={{ animationDelay: '5s' }}>
           <InteractivePlanet size={50} color="from-purple-400 to-violet-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(167,139,250,0.9)] transition-all duration-300" />
         </div>
         

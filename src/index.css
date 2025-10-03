@@ -151,6 +151,15 @@ All colors MUST be HSL.
     50% { opacity: 0.8; }
   }
 
+  /* Star shapes for variety */
+  .star-shape {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  .cross-shape {
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+  }
+
   /* Cosmic text effects */
   .cosmic-glow {
     text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
