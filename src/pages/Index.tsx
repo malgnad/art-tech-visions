@@ -75,7 +75,7 @@ const Index = () => {
 
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className={`cosmic-transition ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="grid lg:grid-cols-2 gap-16 items-center justify-items-center max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-10 items-center justify-items-center max-w-7xl mx-auto">
               {/* Profile Image - Left Side */}
               <div className="flex items-center justify-center lg:justify-center">
                 <div className="relative">
@@ -132,13 +132,19 @@ const Index = () => {
       <section id="about" className="py-20 relative overflow-hidden">
         {/* Decorative Planets Around About Section */}
         <div className="absolute top-10 left-10 opacity-60 animate-float" style={{ animationDelay: '1s' }}>
-          <InteractivePlanet size={100} color="from-violet-400 to-purple-500" hasRing={true} className="hover:scale-110 transition-transform duration-300" />
+          <InteractivePlanet size={100} color="from-violet-400 to-purple-500" hasRing={true} className="hover:scale-110 hover:drop-shadow-[0_0_40px_rgba(167,139,250,0.8)] transition-all duration-300" />
+        </div>
+        <div className="absolute top-40 left-32 opacity-70 animate-float" style={{ animationDelay: '2.5s' }}>
+          <InteractivePlanet size={60} color="from-fuchsia-400 to-pink-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_30px_rgba(236,72,153,0.9)] transition-all duration-300" />
+        </div>
+        <div className="absolute top-2/3 left-20 opacity-55 animate-float" style={{ animationDelay: '4s' }}>
+          <InteractivePlanet size={80} color="from-pink-500 to-purple-600" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_35px_rgba(219,39,119,0.8)] transition-all duration-300" />
         </div>
         <div className="absolute bottom-20 right-10 opacity-50 animate-float" style={{ animationDelay: '3s' }}>
-          <InteractivePlanet size={70} color="from-pink-400 to-fuchsia-500" hasRing={false} className="hover:scale-110 hover:brightness-125 transition-all duration-300" />
+          <InteractivePlanet size={70} color="from-pink-400 to-fuchsia-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_35px_rgba(236,72,153,0.8)] transition-all duration-300" />
         </div>
         <div className="absolute top-1/3 right-1/4 opacity-40 animate-float" style={{ animationDelay: '5s' }}>
-          <InteractivePlanet size={50} color="from-purple-400 to-violet-500" hasRing={false} className="hover:brightness-150 transition-all duration-300" />
+          <InteractivePlanet size={50} color="from-purple-400 to-violet-500" hasRing={false} className="hover:scale-110 hover:drop-shadow-[0_0_25px_rgba(167,139,250,0.9)] transition-all duration-300" />
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
