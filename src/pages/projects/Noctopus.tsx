@@ -1,13 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import Navigation from '@/components/Navigation';
-import { ArrowLeft, Moon, Code, Heart, Calendar } from 'lucide-react';
+import { ArrowLeft, Moon, Code, Heart, Calendar, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import noctopusImage from '@/assets/noctopus.png';
 
 const Noctopus = () => {
+  const [showcaseOpen, setShowcaseOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,6 +61,44 @@ const Noctopus = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* Showcase Button */}
+                <Dialog open={showcaseOpen} onOpenChange={setShowcaseOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      size="lg"
+                      className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      View Showcase
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-bold cosmic-glow">Noctopus - Showcase</DialogTitle>
+                      <DialogDescription className="text-muted-foreground">
+                        Visit the live website and explore the bedtime story experience
+                      </DialogDescription>
+                    </DialogHeader>
+                    
+                    <div className="space-y-8 mt-6">
+                      <div className="space-y-4">
+                        <h3 className="text-2xl font-bold text-primary">Live Website</h3>
+                        <p className="text-foreground/80">Experience the full Noctopus bedtime story website with interactive stories and sleep guidance.</p>
+                        <div className="flex gap-4">
+                          <Button
+                            size="lg"
+                            className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition flex-1"
+                            onClick={() => window.open('https://timetogotobed.wuaze.com/?i=3', '_blank')}
+                          >
+                            <ExternalLink className="w-5 h-5 mr-2" />
+                            Visit Noctopus Website
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
               
               <div className="animate-slide-up">

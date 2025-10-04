@@ -1,13 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import Navigation from '@/components/Navigation';
-import { ArrowLeft, Palette, Code, Monitor, Calendar } from 'lucide-react';
+import { ArrowLeft, Palette, Code, Monitor, Calendar, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import octopaintImage from '@/assets/octopaint.png';
 
 const OctoPaint = () => {
+  const [showcaseOpen, setShowcaseOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -58,6 +61,44 @@ const OctoPaint = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* Showcase Button */}
+                <Dialog open={showcaseOpen} onOpenChange={setShowcaseOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      size="lg"
+                      className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      View Showcase
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
+                    <DialogHeader>
+                      <DialogTitle className="text-3xl font-bold cosmic-glow">OctoPaint - Showcase</DialogTitle>
+                      <DialogDescription className="text-muted-foreground">
+                        Watch the project demonstration and explore the features
+                      </DialogDescription>
+                    </DialogHeader>
+                    
+                    <div className="space-y-8 mt-6">
+                      <div className="space-y-4">
+                        <h3 className="text-2xl font-bold text-primary">Project Demonstration</h3>
+                        <div className="aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 nebula-glow">
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/076DYpOjJ3k"
+                            title="OctoPaint Showcase"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
               
               <div className="animate-slide-up">
