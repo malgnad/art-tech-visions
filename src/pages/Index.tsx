@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
 import InteractivePlanet from '@/components/InteractivePlanet';
 import TwinklingStars from '@/components/TwinklingStars';
-import { Mail, Phone, Github, Star, Code, Palette, Image, Camera, Video, Film } from 'lucide-react';
+import { Mail, Phone, Github, Star, Code, Palette, Image, Camera, Video, Film, Play, ExternalLink } from 'lucide-react';
 
 import amongTheStarsImage from '@/assets/among-the-stars.png';
 import octopaintImage from '@/assets/octopaint.png';
@@ -15,6 +16,7 @@ import uehCampusImage from '@/assets/ueh-campus.png';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showcaseOpen, setShowcaseOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -238,6 +240,90 @@ const Index = () => {
             <p className="text-muted-foreground mt-6 max-w-2xl mx-auto">
               Exploring the intersection of art and technology through interactive experiences and creative coding
             </p>
+            
+            {/* Showcase Button */}
+            <div className="mt-8">
+              <Dialog open={showcaseOpen} onOpenChange={setShowcaseOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg"
+                    className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition"
+                  >
+                    <Play className="w-5 h-5 mr-2" />
+                    Watch Project Showcase
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
+                  <DialogHeader>
+                    <DialogTitle className="text-3xl font-bold cosmic-glow">Project Showcase</DialogTitle>
+                    <DialogDescription className="text-muted-foreground">
+                      Explore my creative projects through videos and live demos
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <div className="space-y-8 mt-6">
+                    {/* OctoPaint */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Palette className="w-6 h-6 text-primary" />
+                        <h3 className="text-2xl font-bold text-primary">OctoPaint</h3>
+                      </div>
+                      <p className="text-foreground/80">A simple digital drawing tool showcasing computer graphics and UI design concepts.</p>
+                      <div className="aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 nebula-glow">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/076DYpOjJ3k"
+                          title="OctoPaint Showcase"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Among the Stars */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Star className="w-6 h-6 text-primary" />
+                        <h3 className="text-2xl font-bold text-primary">Among the Stars</h3>
+                      </div>
+                      <p className="text-foreground/80">An interactive art installation integrating creative coding and digital experiences.</p>
+                      <div className="aspect-video w-full rounded-lg overflow-hidden border-2 border-primary/30 nebula-glow">
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src="https://www.youtube.com/embed/_mWXvfsZmf0"
+                          title="Among the Stars Introduction"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Noctopus */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Film className="w-6 h-6 text-primary" />
+                        <h3 className="text-2xl font-bold text-primary">Noctopus</h3>
+                      </div>
+                      <p className="text-foreground/80">A bedtime-themed website exploring storytelling through interactive web design.</p>
+                      <div className="flex gap-4">
+                        <Button
+                          size="lg"
+                          className="bg-primary text-primary-foreground hover:shadow-cosmic cosmic-transition flex-1"
+                          onClick={() => window.open('https://timetogotobed.wuaze.com/?i=3', '_blank')}
+                        >
+                          <ExternalLink className="w-5 h-5 mr-2" />
+                          Visit Noctopus Website
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
