@@ -269,7 +269,7 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
         {/* Decorative Orange Planet Background */}
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] opacity-15 pointer-events-none">
+        <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] opacity-15 pointer-events-none rotate-12">
           <img 
             src={orangePlanetImage} 
             alt=""
