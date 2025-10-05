@@ -89,7 +89,7 @@ const AmongTheStars = () => {
                           <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/_mWXvfsZmf0"
+                            src="https://www.youtube.com/embed/_mWXvfsZmf0?modestbranding=1&rel=0"
                             title="Among the Stars Introduction"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -105,7 +105,7 @@ const AmongTheStars = () => {
                           <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/J81mFg3yjZQ"
+                            src="https://www.youtube.com/embed/J81mFg3yjZQ?modestbranding=1&rel=0"
                             title="Among the Stars Detailed Showcase"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
