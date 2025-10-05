@@ -14,6 +14,7 @@ import noctopusImage from '@/assets/noctopus.png';
 import profileMainImage from '@/assets/profile-main.png';
 import uehCampusImage from '@/assets/ueh-campus.png';
 import pinkPlanetImage from '@/assets/pink-planet.png';
+import orangePlanetImage from '@/assets/orange-planet.png';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -266,8 +267,17 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative">
-        <div className="container mx-auto px-6">
+      <section id="contact" className="py-20 relative overflow-hidden">
+        {/* Decorative Orange Planet Background */}
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] opacity-15 pointer-events-none">
+          <img 
+            src={orangePlanetImage} 
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 cosmic-glow">Get in Touch</h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full aurora-glow" />
